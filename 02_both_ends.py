@@ -8,13 +8,11 @@ for menor que 2, retorne uma string vazia.
 """
 
 def both_ends(s):
-    output = ""
-    a = len(s)
-    if (a < 2):
-        return 
-    elif (""):
-        saida = spring
-        return ("spng")
+    if (len(s)<2):
+        output = ""
+    else:
+        output = s[0]+s[1]+s[-2]+s[-1]
+    return output
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
