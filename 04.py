@@ -13,6 +13,7 @@ Assuma que a e b tem tamanho 2 ou maior.
 """
 
 def mix_up(a, b):
+    
     a2 = b[:2]+a[2:]
     b2 = a[:2]+b[2:]
     c = a2+" "+b2

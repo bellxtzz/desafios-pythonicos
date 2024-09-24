@@ -1,17 +1,23 @@
 """
-06. not_bad
+05. verbing
 
-Dada uma string, encontre a primeira aparição das
-substrings 'not' e 'bad'. Se 'bad' aparecer depois
-de 'not', troque todo o trecho entre 'not' e 'bad'
-por 'good' e retorne a string resultante.
+Dada uma string, se seu tamanho for pelo menos 3,
+adicione 'ing' no seu fim, a menos que a string
+já termine com 'ing', nesse caso adicione 'ly'.
 
-Exemplo: 'The dinner is not that bad!' retorna 'The dinner is good!'
+Se o tamanho da string for menor que 3, não altere nada.
+
+Retorne o resultado da string.
 """
 
-def not_bad(s):
+def verbing(s):
     # +++ SUA SOLUÇÃO +++
-    return
+    if len(s) > 3:
+        if s[-3:] == 'ing':
+            s = s + "ly"
+        else:
+            s = s + "ing"
+    return s
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -35,7 +41,6 @@ def test(f, in_, expected):
 
 if __name__ == '__main__':
     # Testes que verificam o resultado do seu código em alguns cenários.
-    test(not_bad, 'This movie is not so bad', 'This movie is good')
-    test(not_bad, 'This dinner is not that bad!', 'This dinner is good!')
-    test(not_bad, 'This tea is not hot', 'This tea is not hot')
-    test(not_bad, "It's bad yet not", "It's bad yet not")
+    test(verbing, 'hail', 'hailing')
+    test(verbing, 'swiming', 'swimingly')
+    test(verbing, 'do', 'do')
