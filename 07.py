@@ -11,27 +11,30 @@ Finalmente, dadas duas strings a e b, retorne uma string na forma:
 a-frente + b-frente + a-trás + b-trás
 """
 def front_back(a, b):
-    tam_a = len(a)
-    tam_b = len(b)
-    metade_a_1_parte= ""
-    metade_a_2_parte= ""
-    print(tam_a)
-    if tam_a%2==0:
-        pass
-        # metade_a = tam_a/2
-        # metade_a_1_parte = a[0:metade_a]
-        # metade_a_2_parte = a[metade_a:]
+    # +++ SUA SOLUÇÃO +++
+    if len(a) % 2 == 0 and len(b) % 2 == 0:
+        a_front = a[:len(a)//2]
+        a_back = a[len(a)//2:len(a)]
+        b_front = b[:len(b)//2]
+        b_back = b[len(b)//2:len(b)]
+    elif len(a) % 2 != 0 and len(b) % 2 == 0:
+        a_front = a[:len(a)//2]
+        a_back = a[len(a)//2 + 1:len(a)]
+        b_front = b[:len(b)//2]
+        b_back = b[len(b)//2:len(b)]
+    elif len(a) % 2 == 0 and len(b) % 2 != 0:
+        a_front = a[:len(a)//2]
+        a_back = a[len(a)//2:len(a)]
+        b_front = b[:len(b)//2 + 1]
+        b_back = b[len(b)//2 + 1:len(b)]
     else:
-        pass
-
-    if tam_b%2==0:
-        pass
-    else:
-        pass
-
-    return metade_a_1_parte+b[0]+ metade_a_2_parte+b[1]
-
-
+        a_front = a[:len(a)//2 + 1]
+        a_back = a[len(a)//2 + 1:len(a)]
+        b_front = b[:len(b)//2 + 1]
+        b_back = b[len(b)//2 + 1:len(b)]
+    palavra = a_front + b_front + a_back + b_back
+    return palavra
+    
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
 def test(f, in_, expected):
